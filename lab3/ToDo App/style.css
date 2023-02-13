@@ -1,0 +1,51 @@
+body{
+    background-color:rgb(226, 183, 183)
+}
+#title{
+   background-color: rgb(188, 178, 186);
+   font-family:sans-serif;
+}
+.box{
+    width: 40%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    padding: 60px 40px;
+}
+#NewTask{
+    position: relative;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 5px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+#NewTask input{
+    position: relative;
+    width: 70%;
+    height: 35px;
+    font-family:sans-serif;
+    font-size: 25px;
+    padding: 12px;   
+}
+#NewTask button{
+    position: relative;
+    float: right;
+    width: 20%;
+    height: 60px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 16px;
+    border: none;
+    color: #ffffff;
+    background-color: #8052ec;
+}
+#tasks{
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin-top: 60px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    width: 94%;
+    position: relative;
+}
