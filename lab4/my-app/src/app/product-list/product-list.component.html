@@ -7,13 +7,21 @@
         {{ product.name }}
         </a>
       </h3>
-
+      <img src="{{product.image}}" alt="">
       <p *ngIf="product.description">
         Description: {{ product.description }}
       </p>
       <button type="button" (click)="share()">
         Share
       </button>
+      <!-- <h3>Whatsapp sharing</h3>
+  
+      <a href=
+  "whatsapp://send?text=GFG Example for whatsapp sharing"
+          data-action="share/whatsapp/share"
+          target="_blank">
+          Share to whatsapp
+      </a> -->
       
       <app-product-alerts
         [product]="product" 
