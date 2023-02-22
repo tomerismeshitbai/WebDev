@@ -11,17 +11,10 @@
       <p *ngIf="product.description">
         Description: {{ product.description }}
       </p>
+      <a href="https://t.me/share/url?url={{product.url}}">
       <button type="button" (click)="share()">
-        Share
-      </button>
-      <!-- <h3>Whatsapp sharing</h3>
-  
-      <a href=
-  "whatsapp://send?text=GFG Example for whatsapp sharing"
-          data-action="share/whatsapp/share"
-          target="_blank">
-          Share to whatsapp
-      </a> -->
+        Share(Telegram)
+      </button></a>
       
       <app-product-alerts
         [product]="product" 
