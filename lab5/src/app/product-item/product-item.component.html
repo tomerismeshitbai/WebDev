@@ -11,10 +11,12 @@
         <p *ngIf="product.rating">Rating: {{ product.rating }}</p>
         <p *ngIf="product.description">Description: {{ product.description }}</p>
 
+        <button type="button" (click)="likes(product)">Like | {{product.like}}</button> 
+        <button type="button" (click)="remove(product)">Remove</button> 
         <button type="button" (click)="share(product.url)"> 
           Share 
         </button> 
-        <a href={{product.url}}><button> Kaspi link</button></a>
+         <a href={{product.url}}><button> Kaspi link</button></a>
         <app-product-alerts
             [product]="product" 
             (notify)="onNotify()">

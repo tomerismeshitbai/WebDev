@@ -17,5 +17,15 @@ export class ProductItemComponent {
   onNotify() {
     window.alert('You will be notified when the product goes on sale');
   }
-
+  likes(product:Product){
+    product.like+=1;
+  }
+  remove(product:Product){
+    for(let i=0; i<products.length; i++){
+      if(products[i]==product){
+        delete products[i];
+        break;
+      }
+    }
+  }
 }
