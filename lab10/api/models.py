@@ -1,14 +1,14 @@
 from django.db import models
-from django.db.models import CharField, FloatField, TextField
-from django.db.models.fields.related import ForeignKey
+
 
 class Company(models.Model):
-    name = CharField(max_length=255)
-    description = TextField()
-    city = CharField(max_length=30)
-    address = TextField()
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    city = models.CharField(max_length=255)
+    address = models.TextField()
 
     class Meta:
+        verbose_name = 'Company'
         verbose_name_plural = 'Companies'
 
     def to_json(self):
@@ -19,17 +19,19 @@ class Company(models.Model):
             'city': self.city,
             'address': self.address,
         }
-    
+
     def __str__(self):
         return self.name
 
+
 class Vacancy(models.Model):
-    name = CharField(max_length=255)
-    description = TextField()
-    salary = FloatField()
-    company = ForeignKey(Company, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    salary = models.FloatField()
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
 
     class Meta:
+        verbose_name = 'Vacancy'
         verbose_name_plural = 'Vacancies'
 
     def to_json(self):
@@ -38,7 +40,8 @@ class Vacancy(models.Model):
             'name': self.name,
             'description': self.description,
             'salary': self.salary,
+            'company': self.company.to_json(),
         }
-    
+
     def __str__(self):
-        return f'{self.name} | {str(self.company)}'
+        return self.name

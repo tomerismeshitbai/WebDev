@@ -1,4 +1,12 @@
-from .models import Company, Vacancy
 from django.contrib import admin
+from .models import Company, Vacancy
 
-admin.site.register((Company, Vacancy))
+
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
+    list_display = ("id", "name")
+
+
+@admin.register(Vacancy)
+class VacancyAdmin(admin.ModelAdmin):
+    list_display = ("id", "name", "company")
